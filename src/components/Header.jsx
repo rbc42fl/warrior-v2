@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
 export default function Header() {
   const [pageState, setPageState] = useState('Sign in');
   const location = useLocation();
@@ -23,7 +24,7 @@ export default function Header() {
   }
   return (
     <div className="bg-white border-b shadow-sm">
-      <header className="flex justify-between items-center px-3 max-w-6xl mx-auto sticky top-0 z-50">
+      <header className="flex justify-between items-center px-3 max-w-6xl mx-auto sticky top-0 z-40">
         <div>
           <h2 className="text-2xl text-red-400 cursor-pointer">
             Gods Warriors
