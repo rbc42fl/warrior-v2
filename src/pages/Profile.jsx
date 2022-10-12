@@ -58,6 +58,7 @@ export default function Profile() {
       toast.error('Could not update the profile details');
     }
   }
+  ///////////////////// User Listings /////////////////////////
   useEffect(() => {
     async function fetchUserListings() {
       const listingRef = collection(db, 'listings');
@@ -79,6 +80,7 @@ export default function Profile() {
     }
     fetchUserListings();
   }, [auth.currentUser.uid]);
+  ////////////////// Delete Listing /////////////////////////
   async function onDelete(listingID) {
     if (window.confirm('Are you sure you want to delete?')) {
       await deleteDoc(doc(db, 'listings', listingID));
@@ -86,19 +88,21 @@ export default function Profile() {
         (listing) => listing.id !== listingID
       );
       setListings(updatedListings);
-      toast.success('Successfully deleted the listing');
+      toast.success('Successfully deleted the Posting');
     }
   }
+  ///////////// Edit Listing////////////
   function onEdit(listingID) {
     navigate(`/edit-listing/${listingID}`);
   }
+  ////////////////////////////////////////
   return (
     <>
       <section className="max-w-6xl mx-auto flex justify-center items-center flex-col">
         <h1 className="text-3xl text-center mt-6 font-bold">My Profile</h1>
         <div className="w-full md:w-[50%] mt-6 px-3">
           <form>
-            {/* Name Input */}
+            {/*/////////// Name Input///////////// */}
 
             <input
               type="text"
@@ -111,7 +115,7 @@ export default function Profile() {
               }`}
             />
 
-            {/* Email Input */}
+            {/* //////////Email Input/////////// */}
 
             <input
               type="email"
@@ -160,7 +164,7 @@ export default function Profile() {
         {!loading && listings.length > 0 && (
           <>
             <h2 className="text-2xl text-center font-semibold mb-6">
-              My Listings
+              My Postings
             </h2>
             <ul className="sm:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
               {listings.map((listing) => (
