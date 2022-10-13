@@ -108,6 +108,7 @@ export default function Home() {
   return (
     <div>
       <Slider />
+
       <div className="max-w-6xl mx-auto pt-4 space-y-6">
         {offerListings && offerListings.length > 0 && (
           <div className="m-2 mb-6">
