@@ -26,7 +26,10 @@ export default function Header() {
     <div className="bg-white border-b shadow-sm">
       <header className="flex justify-between items-center px-3 max-w-6xl mx-auto sticky top-0 z-40">
         <div>
-          <h2 className="text-2xl text-red-400 cursor-pointer">
+          <h2
+            onClick={() => navigate('/')}
+            className="text-2xl text-red-400 cursor-pointer"
+          >
             Gods Warriors
           </h2>
         </div>
