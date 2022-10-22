@@ -58,18 +58,17 @@ export default function Slider() {
             >
               <div
                 style={{
-                  background: `url(${data.imgUrls[0]}) center, no-repeat`,
+                  background: `url(${data.imgUrls[0]}) no-repeat`,
                   backgroundSize: 'cover',
                 }}
-                className="relative w-full h-[300px] overflow-hidden"
+                className="relative max-w-6xl mx-auto h-[400px] overflow-hidden mt-4"
               ></div>
-              <p className="text-[#f1faee] absolute left-1 top-3 font-medium max-w-[90%] bg-[#457b9d] shadow-lg opacity-90 p-2 rounded-br-3xl">
+              {/* <p className="text-[#f1faee] absolute left-1 top-3 font-medium max-w-[90%] bg-[#457b9d] shadow-lg opacity-90 p-2 rounded-br-3xl">
                 {data.name}
-              </p>
-              <p className="text-[#f1faee] absolute left-1 bottom-1 font-semibold max-w-[90%] bg-[#e63946] shadow-lg opacity-90 p-2 rounded-tr-3xl">
-                ${data.discountedPrice ?? data.regularPrice}
-                {data.type === 'rent' && ' / month'}
-              </p>
+              </p> */}
+              {/* <p className="text-[#f1faee] absolute left-1 top-16 font-medium max-w-[90%] bg-[#457b9d] shadow-lg opacity-90 p-2 rounded-br-3xl">
+                {data.book}
+              </p> */}
             </SwiperSlide>
           ))}
         </Swiper>

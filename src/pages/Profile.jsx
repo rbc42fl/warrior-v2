@@ -155,16 +155,17 @@ export default function Profile() {
               className="flex justify-center items-center"
             >
               <FcHome className="mr-2 text-3xl bg-red-200 rounded-full p-1 border-2" />
-              Sell or rent your home
+              Create New posting
             </Link>
           </button>
         </div>
       </section>
+
       <div className="max-w-6xl px-3 mt-6 mx-auto">
         {!loading && listings.length > 0 && (
           <>
-            <h2 className="text-2xl text-center font-semibold mb-6">
-              My Postings
+            <h2 className="text-2xl text-blue-600 text-center font-semibold mb-6 uppercase">
+              My Quiet Time Postings
             </h2>
             <ul className="sm:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
               {listings.map((listing) => (

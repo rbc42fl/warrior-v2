@@ -79,14 +79,14 @@ export default function Category() {
   return (
     <div className="max-w-6xl mx-auto px-3">
       <h1 className="text-3xl text-center mt-6 font-bold mb-6">
-        {params.categoryName === 'rent' ? 'Places for rent' : 'Places for sale'}
+        {params.categoryName === 'new' ? 'new Testament' : 'old testament'}
       </h1>
       {loading ? (
         <Spinner />
       ) : listings && listings.length > 0 ? (
         <>
           <main>
-            <ul className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+            <ul className="sm:grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
               {listings.map((listing) => (
                 <ListingItem
                   key={listing.id}
@@ -110,9 +110,7 @@ export default function Category() {
       ) : (
         <p>
           There are no current{' '}
-          {params.categoryName === 'rent'
-            ? 'places for rent'
-            : 'places for sale'}
+          {params.categoryName === 'new' ? 'new testament' : 'old testament'}
         </p>
       )}
     </div>

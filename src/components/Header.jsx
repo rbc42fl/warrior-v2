@@ -24,17 +24,26 @@ export default function Header() {
   }
   return (
     <div className="bg-white border-b shadow-sm">
-      <header className="flex justify-between items-center px-3 max-w-6xl mx-auto sticky top-0 z-40">
+      <header className="flex justify-between items-center px-3 max-w-6xl mx-auto sticky top-0  z-40">
         <div>
           <h2
             onClick={() => navigate('/')}
             className="text-2xl text-red-400 cursor-pointer"
           >
-            Gods Warriors
+            BEING STEADFAST
           </h2>
         </div>
         <div>
           <ul className="flex space-x-10">
+            <li
+              className={` cursor-pointer py-3 text-sm font-semi-bold text-gray-400 border-b-[3px] border-b-transparent ${
+                pathMatchRoute('/offers') && 'text-black border-b-red-500'
+              }`}
+              onClick={() => navigate('/instructions')}
+            >
+              Instructions
+            </li>
+
             <li
               className={` cursor-pointer py-3 text-sm font-semi-bold text-gray-400 border-b-[3px] border-b-transparent ${
                 pathMatchRoute('/') && 'text-black border-b-red-500'
@@ -43,14 +52,7 @@ export default function Header() {
             >
               Home
             </li>
-            <li
-              className={` cursor-pointer py-3 text-sm font-semi-bold text-gray-400 border-b-[3px] border-b-transparent ${
-                pathMatchRoute('/offers') && 'text-black border-b-red-500'
-              }`}
-              onClick={() => navigate('/offers')}
-            >
-              Offers
-            </li>
+
             <li
               className={` cursor-pointer py-3 text-sm font-semi-bold text-gray-400 border-b-[3px] border-b-transparent ${
                 pathMatchRoute('/sign-in') ||

@@ -20,3 +20,32 @@ html::-webkit-scrollbar {
 html {
   scrollbar-width: none;
 }
+
+/* formik form css */
+
+button {
+  display: block;
+  margin: 1rem 0;
+  padding: 0.35rem 0.5rem;
+  background-color: #4299e1;
+  color: #1a202c;
+  border: none;
+  border-radius: 3px;
+  width: 400px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+input.input-error,
+select.input-error {
+  border-color: #fc8181;
+}
+button:disabled {
+  opacity: 0.35;
+}
+.chapter_verse {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  width: 150px;
+}
