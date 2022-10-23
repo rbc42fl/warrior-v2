@@ -12,6 +12,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useNavigate } from 'react-router-dom';
+import { Dropdown } from 'react-bootstrap';
 
 export default function CreateListing() {
   const navigate = useNavigate();
@@ -247,7 +248,7 @@ export default function CreateListing() {
             onChange={onChange}
             placeholder="Command"
             required
-            className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-2"
+            className="w-full px-1 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-2"
           />
 
           <p className="text-lg mt-3 font-semibold">Is there a Promise?</p>
@@ -274,7 +275,7 @@ export default function CreateListing() {
                 min="1"
                 max="50"
                 // required
-                className="w-full h-28 px-4 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
+                className="w-full h-28 px1 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
               />
             </div>
             <div className="flex flex-col mr-3">
@@ -286,7 +287,7 @@ export default function CreateListing() {
                 onChange={onChange}
                 placeholder="Key Word"
                 // required
-                className="w-full px-4 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
+                className="w-full px-1 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
               />
             </div>
             <div className="flex flex-col">
@@ -298,7 +299,7 @@ export default function CreateListing() {
                 onChange={onChange}
                 placeholder="Key Word"
                 // required
-                className="w-full px-4 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
+                className="w-full px-1 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
               />
             </div>
           </div>
@@ -313,7 +314,7 @@ export default function CreateListing() {
               onChange={onChange}
               placeholder="Message"
               required
-              className="w-full h-36 px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-3"
+              className="w-full h-36 px-1s py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-3"
             />
           </div>
 
@@ -326,7 +327,7 @@ export default function CreateListing() {
               onChange={onChange}
               placeholder="Reflections"
               required
-              className="w-full h-36 px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
+              className="w-full h-36 px-1 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
             />
           </div>
         </div>

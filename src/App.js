@@ -16,6 +16,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import EditListing from './pages/EditListing';
 import Listing from './pages/Listing';
 import Category from './pages/Category';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

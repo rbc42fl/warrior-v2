@@ -105,7 +105,7 @@ export default function Listing() {
             </p>
           </div>
 
-          <ul className="flex-col mb-4 sm:flex shadow-md">
+          <ul className="flex mb-4 sm:flex shadow-md">
             <li className="flex items-center whitespace-nowrap  mr-4  max-w-min">
               {/* <FaCross className="text-lg mr-1" /> */}
               <span className="font-semibold whitespace-pre ">
@@ -136,7 +136,7 @@ export default function Listing() {
               <span className="font-semibold whitespace-pre">Commands </span>
               <textarea
                 type="text"
-                className=" h-28 mb-3 shadow-md  max-w-4xl  border-black"
+                className=" h-36 mb-3 shadow-md  max-w-4xl  border-black"
                 value={listing.command}
               />
             </div>
@@ -149,7 +149,7 @@ export default function Listing() {
               />
             </div>
             <div className="">
-              <ul className="flex-col shadow-md">
+              <ul className="flex shadow-md">
                 <li className="flex items-center mb-3 mr-3  max-w-min">
                   {/* <FaChair className="text-lg mr-1" /> */}
                   <span className="font-semibold whitespace-pre">
@@ -178,7 +178,7 @@ export default function Listing() {
               <span className="font-semibold whitespace-pre">Reflections </span>
               <textarea
                 type="text"
-                className=" h-28   mb-8 shadow-md  max-w-4xl  border-black"
+                className=" h-36   mb-8 shadow-md  max-w-4xl  border-black"
                 value={listing.reflections}
               />
             </div>
