@@ -99,14 +99,14 @@ export default function Listing() {
             {listing.name}
           </p>
           {/* un ordered list /////////// */}
-          <div className="flex  justify-start items-center space-x-4 w-[75%]">
+          <div className="flex  justify-start items-centers space-x-4 w-[75%]">
             <p className=" w-full max-w-[200px] rounded-md p-1 text-black  font-semibold shadow-md mb-4">
               {listing.type === 'new' ? 'New' : 'Old'} Testament Book
             </p>
           </div>
 
-          <ul className="flex mb-4 sm:flex shadow-md">
-            <li className="flex items-center whitespace-nowrap  mr-4  max-w-min">
+          <ul className="flex flex-col mb-4 sm:flex shadow-md">
+            <li className="flex items-start whitespace-nowrap  mr-4  max-w-min">
               {/* <FaCross className="text-lg mr-1" /> */}
               <span className="font-semibold whitespace-pre ">
                 Book : &nbsp;
@@ -149,7 +149,7 @@ export default function Listing() {
               />
             </div>
             <div className="">
-              <ul className="flex shadow-md">
+              <ul className="flex flex-col shadow-md">
                 <li className="flex items-center mb-3 mr-3  max-w-min">
                   {/* <FaChair className="text-lg mr-1" /> */}
                   <span className="font-semibold whitespace-pre">
@@ -157,7 +157,7 @@ export default function Listing() {
                   </span>
                   {listing.keyword_1}
                 </li>
-                <li className="flex items-center mb-3 mr-3  max-w-min">
+                <li className="flex  items-center mb-3 mr-3  max-w-min">
                   {/* <FaChair className="text-lg mr-1" /> */}
                   <span className="font-semibold whitespace-pre">
                     Key Word : &nbsp;
