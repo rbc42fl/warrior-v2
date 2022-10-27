@@ -12,7 +12,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useNavigate } from 'react-router-dom';
-import { Dropdown } from 'react-bootstrap';
+// import { Dropdown } from 'react-bootstrap';
 
 export default function CreateListing() {
   const navigate = useNavigate();
@@ -30,6 +30,7 @@ export default function CreateListing() {
     keyword_2: '',
     keyword_3: '',
     promise: '',
+    sin: '',
     message: '',
     reflections: '',
 
@@ -46,6 +47,7 @@ export default function CreateListing() {
     keyword_2,
     keyword_3,
     promise,
+    sin,
     reflections,
     message,
 
@@ -105,6 +107,7 @@ export default function CreateListing() {
               case 'running':
                 console.log('Upload is running');
                 break;
+              default:
             }
           },
           (error) => {
@@ -218,7 +221,7 @@ export default function CreateListing() {
               value={chapter}
               onChange={onChange}
               min="1"
-              max="25"
+              max="250"
               placeholder="Chapter"
               required
               className="w-1/2 px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
@@ -230,7 +233,7 @@ export default function CreateListing() {
               value={verse}
               onChange={onChange}
               min="1"
-              max="25"
+              max="250"
               placeholder="Verse"
               required
               className="w-1/2 px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
@@ -258,11 +261,21 @@ export default function CreateListing() {
             id="promise"
             value={promise}
             onChange={onChange}
-            placeholder="Promise"
+            placeholder=" Is There a Promise"
             required
             className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-3"
           />
+          <p className="text-lg mt-3 font-semibold">Is there a sin to avoid?</p>
 
+          <textarea
+            type="text"
+            id="sin"
+            value={sin}
+            onChange={onChange}
+            placeholder="Sin to avoid"
+            required
+            className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-3"
+          />
           <div className="flex max-h-28">
             <div className="flex flex-col mr-3 ">
               <p className="text-lg font-semibold">Key Word</p>
@@ -306,20 +319,24 @@ export default function CreateListing() {
         </div>
         <div className="flex flex-col">
           <div>
-            <p className="text-lg mt-6 font-semibold">Primary Message</p>
+            <p className="text-lg mt-6 font-semibold">
+              Primary Message From Scripture
+            </p>
             <textarea
               type="text"
               id="message"
               value={message}
               onChange={onChange}
-              placeholder="Message"
+              placeholder=" Scriptural Message"
               required
               className="w-full h-36 px-1s py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-3"
             />
           </div>
 
           <div>
-            <p className="text-lg mt-6 font-semibold">Reflections</p>
+            <p className="text-lg mt-6 font-semibold">
+              Your Personal Reflections
+            </p>
             <textarea
               type="text"
               id="reflections"
@@ -352,7 +369,7 @@ export default function CreateListing() {
           type="submit"
           className="mb-6 w-full px-7 py-3 bg-blue-600 text-white font-medium text-sm uppercase rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
         >
-          Create Listing
+          Create New Posting
         </button>
       </form>
     </main>

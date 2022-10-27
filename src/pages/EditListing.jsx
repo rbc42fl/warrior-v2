@@ -37,6 +37,7 @@ export default function CreateListing() {
     reflections: '',
     command: '',
     promise: '',
+    sin: '',
     keyword: '',
     keyword2: '',
     keyword3: '',
@@ -52,6 +53,7 @@ export default function CreateListing() {
     reflections,
     command,
     promise,
+    sin,
     keyword,
     keyword2,
     keyword3,
@@ -280,6 +282,17 @@ export default function CreateListing() {
           placeholder="Promise"
           required
           className="flex flex-wrap w-96 px-4 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
+        />
+        <p className="text-lg mt-3 font-semibold">Is there a sin to avoid?</p>
+
+        <textarea
+          type="text"
+          id="sin"
+          value={sin}
+          onChange={onChange}
+          placeholder="Sin to avoid"
+          required
+          className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-3"
         />
         <div className="flex">
           <div className=" flex flex-col mr-3">

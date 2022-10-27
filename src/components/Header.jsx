@@ -23,21 +23,22 @@ export default function Header() {
     }
   }
   return (
-    <div className="bg-white border-b shadow-sm">
-      <header className="flex justify-between items-center px-3 max-w-6xl mx-auto sticky top-0  z-40">
-        <div>
-          <h2
-            onClick={() => navigate('/')}
-            className="text-2xl text-red-400 cursor-pointer"
-          >
-            BEING STEADFAST
-          </h2>
-        </div>
+    <div className="bg-white border-b shadow-sm text-center">
+      <div>
+        <h2
+          onClick={() => navigate('/')}
+          className=" text-md text-red-400 cursor-pointer "
+        >
+          BEING STEADFAST
+        </h2>
+      </div>
+
+      <header className="flex justify-center items-center px-3 max-w-6xl mx-auto sticky top-0  z-40">
         <div>
           <ul className="flex space-x-10">
             <li
               className={` cursor-pointer py-3 text-sm font-semi-bold text-gray-400 border-b-[3px] border-b-transparent ${
-                pathMatchRoute('/offers') && 'text-black border-b-red-500'
+                pathMatchRoute('/instructions') && 'text-black border-b-red-500'
               }`}
               onClick={() => navigate('/instructions')}
             >
