@@ -33,6 +33,7 @@ export default function CreateListing() {
     book: '',
     chapter: '',
     verse: '',
+    verse1: '',
     message: '',
     reflections: '',
     command: '',
@@ -49,6 +50,7 @@ export default function CreateListing() {
     book,
     chapter,
     verse,
+    verse1,
     message,
     reflections,
     command,
@@ -210,7 +212,7 @@ export default function CreateListing() {
           required
           className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
         />
-        <div className="flex space-x-6 mb-6">
+        <div className="flex flex-col space-x-6 mb-6">
           <div>
             <p className="text-lg font-semibold "> Bible Book</p>
             <input
@@ -238,18 +240,35 @@ export default function CreateListing() {
               className="w-20 px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 text-center"
             />
           </div>
-          <div>
-            <p className="text-lg font-semibold">Verse</p>
-            <input
-              type="number"
-              id="verse"
-              value={verse}
-              onChange={onChange}
-              min="1"
-              max="50"
-              required
-              className="w-20 px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 text-center"
-            />
+          <div className="flex">
+            <div className="flex flex-col w-48">
+              <p className="text-lg font-semibold ">Verse</p>
+              <input
+                type="number"
+                id="verse"
+                value={verse}
+                onChange={onChange}
+                min="1"
+                max="250"
+                // placeholder="Verse"
+                required
+                className="w-1/2 px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
+              />
+            </div>
+            <div className="flex flex-col w-48">
+              <p className="text-lg font-semibold">Verse</p>
+              <input
+                type="number"
+                id="verse1"
+                value={verse1}
+                onChange={onChange}
+                min="1"
+                max="250"
+                // placeholder="Verse"
+                // required
+                className="w-1/2 px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
+              />
+            </div>
           </div>
         </div>
 
@@ -296,7 +315,7 @@ export default function CreateListing() {
         />
         <div className="flex">
           <div className=" flex flex-col mr-3">
-            <p className="  text-lg mt-6 font-semibold">Key Word One</p>
+            <p className="  text-lg mt-6 font-semibold">Key Word </p>
             <textarea
               type="text"
               id="keyword"
@@ -308,7 +327,7 @@ export default function CreateListing() {
             />
           </div>
           <div className=" flex flex-col mr-3">
-            <p className="text-lg mt-6 font-semibold ">Key Word Two</p>
+            <p className="text-lg mt-6 font-semibold ">Key Word </p>
             <textarea
               type="text"
               id="keyword2"
@@ -320,7 +339,7 @@ export default function CreateListing() {
             />
           </div>
           <div>
-            <p className="text-lg mt-6 font-semibold mr-3">Key Word Three</p>
+            <p className="text-lg mt-6 font-semibold mr-3">Key Word </p>
             <textarea
               type="text"
               id="keyword3"
@@ -334,18 +353,37 @@ export default function CreateListing() {
         </div>
         {/* ///// End key word///// */}
 
-        <p className="text-lg font-semibold">
-          Your reflections on the passage.
-        </p>
-        <textarea
-          type="text"
-          id="reflections"
-          value={reflections}
-          onChange={onChange}
-          placeholder="reflections"
-          required
-          className="flex flex-wrap w-96 px-4 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
-        />
+        <div className="flex flex-col">
+          <div>
+            <p className="text-lg mt-6 font-semibold">
+              Primary Message From Scripture
+            </p>
+            <textarea
+              type="text"
+              id="message"
+              value={message}
+              onChange={onChange}
+              placeholder=" Scriptural Message"
+              required
+              className="w-full h-36 px-1s py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-3"
+            />
+          </div>
+
+          <div>
+            <p className="text-lg mt-6 font-semibold">
+              Your Personal Reflections
+            </p>
+            <textarea
+              type="text"
+              id="reflections"
+              value={reflections}
+              onChange={onChange}
+              placeholder="Reflections"
+              required
+              className="w-full h-36 px-1 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
+            />
+          </div>
+        </div>
 
         <div className="mb-6">
           <p className="text-lg font-semibold">Images</p>

@@ -79,7 +79,7 @@ export default function Home() {
     <div>
       <Slider />
 
-      <div className="max-w-4xl mx-auto pt-4 space-y-6">
+      <div className="max-w-6xl mx-auto pt-4 space-y-6">
         {newListings && newListings.length > 0 && (
           <div className="m-2 mb-6">
             <h2 className="px-3 text-2xl mt-6 font-semibold">
@@ -91,6 +91,7 @@ export default function Home() {
               </p>
             </Link>
             <ul className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+              {/* <ul className="grid grid-flow-col auto-cols-fr "> */}
               {newListings.map((listing) => (
                 <ListingItem
                   key={listing.id}

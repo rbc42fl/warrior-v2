@@ -13,14 +13,13 @@ import SwiperCore, {
 } from 'swiper';
 import 'swiper/css/bundle';
 ////////////////
-import {
-  FaShare,
-  FaCross,
-  // FaBed,
-  // FaBath,
-  // FaParking,
-  // FaChair,
-} from 'react-icons/fa';
+import // FaShare,
+// FaCross,
+// FaBed,
+// FaBath,
+// FaParking,
+// FaChair,
+'react-icons/fa';
 import { getAuth } from 'firebase/auth';
 import Contact from '../components/Contact';
 // import { Formik } from 'formik';
@@ -31,7 +30,7 @@ export default function Listing() {
   const params = useParams();
   const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [shareLinkCopied, setShareLinkCopied] = useState(false);
+  // const [shareLinkCopied, setShareLinkCopied] = useState(false);
   const [contactLandlord, setContactLandlord] = useState(false);
   SwiperCore.use([Autoplay, Navigation, Pagination]);
 
@@ -71,7 +70,7 @@ export default function Listing() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div
+      {/* <div
         className="fixed top-[8%] right-[15%] z-10 bg-white cursor-pointer border-2 border-gray-400 rounded-full w-12 h-12 flex justify-center items-center"
         onClick={() => {
           navigator.clipboard.writeText(window.location.href);
@@ -87,7 +86,7 @@ export default function Listing() {
         <p className="fixed top-[20%] right-[5%] font-semibold border-2 border-gray-400 rounded-md bg-white z-10 p-2">
           Posting Link Copied
         </p>
-      )}
+      )} */}
       {/* ////End of swiper ///// */}
 
       <div className="mx-auto flex flex-col  max-w-6xl lg:mx-auto p-4 rounded-lg shadow-lg bg-white lg:space-x-6 ">
@@ -130,6 +129,13 @@ export default function Listing() {
               </span>
               {listing.verse}
             </li>
+            <li className="flex items-center whitespace-nowrap  mr-4  max-w-min">
+              {/* <FaCross className="text-lg mr-1" /> */}
+              <span className="font-semibold whitespace-pre">
+                Verse : &nbsp;
+              </span>
+              {listing.verse1}
+            </li>
           </ul>
           <div>
             <div className="flex flex-col">
@@ -148,6 +154,27 @@ export default function Listing() {
                 value={listing.promise}
               />
             </div>
+            <div className="flex flex-col">
+              <span className="font-semibold whitespace-pre">
+                Primary Message{' '}
+              </span>
+              <textarea
+                type="text"
+                className=" h-28   mb-3 shadow-md  max-w-4xl  border-black"
+                value={listing.message}
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-semibold whitespace-pre">
+                A sin to avoid{' '}
+              </span>
+              <textarea
+                type="text"
+                className=" h-28   mb-3 shadow-md  max-w-4xl  border-black"
+                value={listing.sin}
+              />
+            </div>
+
             <div className="">
               <ul className="flex flex-col shadow-md">
                 <li className="flex items-center mb-3 mr-3  max-w-min">
