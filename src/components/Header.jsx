@@ -23,7 +23,7 @@ export default function Header() {
     }
   }
   return (
-    <div className="bg-white border-b shadow-sm text-center">
+    <div className="bg-white border-b sticky top-0  z-40 shadow-sm text-center">
       <div>
         <h2
           onClick={() => navigate('/')}
@@ -33,7 +33,7 @@ export default function Header() {
         </h2>
       </div>
 
-      <header className="flex justify-center items-center px-3 max-w-6xl mx-auto sticky top-0  z-40">
+      <header className="flex justify-center items-center px-3 max-w-6xl mx-auto sticky ">
         <div>
           <ul className="flex space-x-10">
             <li

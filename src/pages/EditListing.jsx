@@ -224,7 +224,7 @@ export default function CreateListing() {
               max="50"
               placeholder="Book"
               required
-              className="w-full px-4 py-2 text-xl text-gray-900 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 text-center"
+              className="w-full px-4 py-2 text-xl text-gray-900 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 "
             />
           </div>
           <div>
@@ -354,21 +354,6 @@ export default function CreateListing() {
         {/* ///// End key word///// */}
 
         <div className="flex flex-col">
-          <div>
-            <p className="text-lg mt-6 font-semibold">
-              Primary Message From Scripture
-            </p>
-            <textarea
-              type="text"
-              id="message"
-              value={message}
-              onChange={onChange}
-              placeholder=" Scriptural Message"
-              required
-              className="w-full h-36 px-1s py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-3"
-            />
-          </div>
-
           <div>
             <p className="text-lg mt-6 font-semibold">
               Your Personal Reflections
