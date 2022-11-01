@@ -34,14 +34,15 @@ export default function CreateListing() {
     chapter: '',
     verse: '',
     verse1: '',
+    verse2: '',
     message: '',
     reflections: '',
     command: '',
     promise: '',
     sin: '',
-    keyword: '',
-    keyword2: '',
-    keyword3: '',
+    keyword_1: '',
+    keyword_2: '',
+    keyword_3: '',
     images: {},
   });
   const {
@@ -51,14 +52,15 @@ export default function CreateListing() {
     chapter,
     verse,
     verse1,
+    verse2,
     message,
     reflections,
     command,
     promise,
     sin,
-    keyword,
-    keyword2,
-    keyword3,
+    keyword_1,
+    keyword_2,
+    keyword_3,
     images,
   } = formData;
 
@@ -269,6 +271,20 @@ export default function CreateListing() {
                 className="w-1/2 px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
               />
             </div>
+            <div className="flex flex-col w-48">
+              <p className="text-lg font-semibold">Verse</p>
+              <input
+                type="number"
+                id="verse2"
+                value={verse2}
+                onChange={onChange}
+                min="1"
+                max="250"
+                // placeholder="Verse"
+                // required
+                className="w-1/2 px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
+              />
+            </div>
           </div>
         </div>
 
@@ -318,8 +334,8 @@ export default function CreateListing() {
             <p className="  text-lg mt-6 font-semibold">Key Word </p>
             <textarea
               type="text"
-              id="keyword"
-              value={keyword}
+              id="keyword_1"
+              value={keyword_1}
               onChange={onChange}
               placeholder="Key Word"
               required
@@ -330,8 +346,8 @@ export default function CreateListing() {
             <p className="text-lg mt-6 font-semibold ">Key Word </p>
             <textarea
               type="text"
-              id="keyword2"
-              value={keyword2}
+              id="keyword_2"
+              value={keyword_2}
               onChange={onChange}
               placeholder="Key Word 2"
               required
@@ -342,8 +358,8 @@ export default function CreateListing() {
             <p className="text-lg mt-6 font-semibold mr-3">Key Word </p>
             <textarea
               type="text"
-              id="keyword3"
-              value={keyword3}
+              id="keyword_3"
+              value={keyword_3}
               onChange={onChange}
               placeholder="Key Word 3"
               required

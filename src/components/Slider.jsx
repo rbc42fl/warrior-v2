@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Spinner from '../components/Spinner';
 import { db } from '../firebase';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import SwiperCore, {
   EffectFade,
   Autoplay,
@@ -61,7 +62,7 @@ export default function Slider() {
                   background: `url(${data.imgUrls[0]}) no-repeat`,
                   backgroundSize: 'cover',
                 }}
-                className="relative max-w-6xl mx-auto h-[400px] overflow-hidden mt-4"
+                className="relative slide max-w-6xl h-[400px] overflow-hidden mt-4 "
               ></div>
               {/* <p className="text-[#f1faee] absolute left-1 top-3 font-medium max-w-[90%] bg-[#457b9d] shadow-lg opacity-90 p-2 rounded-br-3xl">
                 {data.name}

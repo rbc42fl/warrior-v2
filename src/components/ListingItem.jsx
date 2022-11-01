@@ -11,7 +11,7 @@ export default function ListingItem({ listing, id, onEdit, onDelete }) {
     <li className="relative bg-white flex flex-col justify-between items-center shadow-md hover:shadow-xl rounded-md overflow-hidden transition-shadow duration-150 m-[10px]">
       <Link className="contents" to={`/category/${listing.type}/${id}`}>
         <img
-          className="h-[300px] w-full cover  hover:scale-105 transition-scale duration-200 ease-in"
+          className="h-[400px] w-full cover  hover:scale-105 transition-scale duration-200 ease-in"
           loading="lazy"
           src={listing.imgUrls[0]}
           alt=""
@@ -33,6 +33,12 @@ export default function ListingItem({ listing, id, onEdit, onDelete }) {
           </p>
           <p className="font-semibold m-0 text-xl">
             verse:&nbsp;{listing.verse}
+          </p>
+          <p className="font-semibold m-0 text-xl">
+            verse:&nbsp;{listing.verse1}
+          </p>
+          <p className="font-semibold m-0 text-xl">
+            verse:&nbsp;{listing.verse2}
           </p>
           <p className="font-semibold m-0 text-xl truncate mb-4">
             message:&nbsp;{listing.message}

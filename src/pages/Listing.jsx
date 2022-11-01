@@ -11,7 +11,7 @@ import SwiperCore, {
   Navigation,
   Pagination,
 } from 'swiper';
-import 'swiper/css/bundle';
+
 ////////////////
 import // FaShare,
 // FaCross,
@@ -47,23 +47,25 @@ export default function Listing() {
     return <Spinner />;
   }
   return (
-    <main>
+    <main className="max-w-24">
       <Swiper
+        modules={[Navigation, Pagination, EffectFade]}
         slidesPerView={1}
+        centeredSlides={true}
         navigation
         pagination={{ type: 'progressbar' }}
         effect="fade"
-        modules={[EffectFade]}
         autoplay={{ delay: 3000 }}
+        className="my_swiper"
       >
         {listing.imgUrls.map((url, index) => (
           <SwiperSlide key={index}>
             <div
-              className="relative max-w-6xl overflow-hidden h-[400px] mx-auto"
               style={{
-                background: `url(${listing.imgUrls[index]})  no-repeat`,
+                background: `url(${listing.imgUrls[index]})  center no-repeat`,
                 backgroundSize: 'cover',
               }}
+              className="relative w-full overflow-hidden h-[400px] "
             ></div>
           </SwiperSlide>
         ))}
@@ -118,6 +120,13 @@ export default function Listing() {
               </span>
               {listing.verse1}
             </li>
+            <li className="flex items-center whitespace-nowrap  mr-4  max-w-min">
+              {/* <FaCross className="text-lg mr-1" /> */}
+              <span className="font-semibold whitespace-pre">
+                Verse : &nbsp;
+              </span>
+              {listing.verse2}
+            </li>
           </ul>
           <div>
             <div className="flex flex-col">
@@ -165,21 +174,21 @@ export default function Listing() {
                   <span className="font-semibold whitespace-pre">
                     Key Word : &nbsp;
                   </span>
-                  {listing.keyword}
+                  {listing.keyword_1}
                 </li>
                 <li className="flex  items-center mb-3 mr-3  max-w-min">
                   {/* <FaChair className="text-lg mr-1" /> */}
                   <span className="font-semibold whitespace-pre">
                     Key Word : &nbsp;
                   </span>
-                  {listing.keyword2}
+                  {listing.keyword_2}
                 </li>
                 <li className="flex items-center mb-3  max-w-min">
                   {/* <FaChair className="text-lg mr-1" /> */}
                   <span className="font-semibold whitespace-pre">
                     Key Word: &nbsp;
                   </span>
-                  {listing.keyword3}
+                  {listing.keyword_3}
                 </li>
               </ul>
             </div>

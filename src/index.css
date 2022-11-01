@@ -4,7 +4,21 @@
 
 body {
   background-color: rgb(240, 253, 244);
+  max-width: 90rem;
 }
+
+/* @media only screen and (max-width: 1170px) {
+  .swiper-slide {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: 0 0 !important;
+    height: 580px !important;
+    margin: 0 auto !important;
+  }
+  .swiper-container {
+    height: 600px;
+  }
+} */
 .swiper-button-next:after,
 .swiper-button-prev:after {
   color: #21dce2;
@@ -12,17 +26,46 @@ body {
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: #d33c0e !important;
 }
-
-html::-webkit-scrollbar {
-  display: none;
+main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.slides {
+  height: auto;
 }
 
+/* .my_swiper {
+  max-height: 100vh;
+} */
+/* .swiper-image {
+  height: 600px;
+} */
+/* .swiper-slide {
+  max-width: 72rem;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+} */
+
+/* @media (min-width: 1024px) {
+  .swiper-slide {
+    margin: 0 auto;
+    /* padding-left: 5rem; */
+/* background-size: cover;
+    background-position: center;
+  }
+} */
+*/
+/* .slider {
+  border-bottom: 5px solid black;
+} */
 html {
   scrollbar-width: none;
 }
 
 /* formik form css */
-
+/* 
 button {
   display: block;
   margin: 1rem 0;
@@ -48,4 +91,4 @@ button:disabled {
   flex-direction: column;
   margin-top: 0.5rem;
   width: 150px;
-}
+} */
