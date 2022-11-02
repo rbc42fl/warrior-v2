@@ -10,18 +10,7 @@ html {
   max-width: 800px;
   margin: 0 auto;
 }
-/* @media only screen and (max-width: 1170px) {
-  .swiper-slide {
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-position: 0 0 !important;
-    height: 580px !important;
-    margin: 0 auto !important;
-  }
-  .swiper-container {
-    height: 600px;
-  }
-} */
+
 .swiper-button-next:after,
 .swiper-button-prev:after {
   color: #21dce2;
@@ -51,60 +40,6 @@ main {
   /* object-fit: cover; */
 }
 
-/* .my_swiper {
-  max-height: 100vh;
-} */
-/* .swiper-image {
-  height: 600px;
-} */
-/* .swiper-slide {
-  max-width: 72rem;
-  margin: 0 auto;
-  height: 100%;
-  width: 100%;
-} */
-
-/* @media (min-width: 1024px) {
-  .swiper-slide {
-    margin: 0 auto;
-    /* padding-left: 5rem; */
-/* background-size: cover;
-    background-position: center;
-  }
-} */
-*/
-/* .slider {
-  border-bottom: 5px solid black;
-} */
 html {
   scrollbar-width: none;
 }
-
-/* formik form css */
-/* 
-button {
-  display: block;
-  margin: 1rem 0;
-  padding: 0.35rem 0.5rem;
-  background-color: #4299e1;
-  color: #1a202c;
-  border: none;
-  border-radius: 3px;
-  width: 400px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-input.input-error,
-select.input-error {
-  border-color: #fc8181;
-}
-button:disabled {
-  opacity: 0.35;
-}
-.chapter_verse {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0.5rem;
-  width: 150px;
-} */
