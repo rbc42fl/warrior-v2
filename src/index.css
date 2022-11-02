@@ -4,9 +4,12 @@
 
 body {
   background-color: rgb(240, 253, 244);
-  max-width: 90rem;
+  max-width: 800px;
 }
-
+html {
+  max-width: 800px;
+  margin: 0 auto;
+}
 /* @media only screen and (max-width: 1170px) {
   .swiper-slide {
     background-size: cover !important;
@@ -33,6 +36,19 @@ main {
 }
 .slides {
   height: auto;
+}
+.swiperSlideDiv {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  height: 500px;
+}
+
+.swiperSlideImg {
+  width: 100%;
+  background: cover;
+  /* object-fit: cover; */
 }
 
 /* .my_swiper {

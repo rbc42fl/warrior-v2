@@ -31,6 +31,7 @@ export default function Header() {
         >
           BEING STEADFAST
         </h2>
+        <h3 className="text-sm ">Best viewed on medium size screen</h3>
       </div>
 
       <header className="flex justify-center items-center px-3 max-w-6xl mx-auto sticky ">

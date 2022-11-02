@@ -90,7 +90,7 @@ export default function Home() {
                 Show more
               </p>
             </Link>
-            <ul className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <ul className="sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
               {newListings.map((listing) => (
                 <ListingItem
                   key={listing.id}
@@ -111,7 +111,7 @@ export default function Home() {
                 Show more
               </p>
             </Link>
-            <ul className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+            <ul className="sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
               {oldListings.map((listing) => (
                 <ListingItem
                   key={listing.id}

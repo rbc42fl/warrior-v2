@@ -162,13 +162,13 @@ export default function Profile() {
         </div>
       </section>
 
-      <div className="max-w-6xl px-3 mt-6 mx-auto">
+      <div className="max-w-5xl px-3 mt-6 mx-auto">
         {!loading && listings.length > 0 && (
           <>
             <h2 className="text-2xl text-blue-600 text-center font-semibold mb-6 uppercase">
               My Quiet Time Postings
             </h2>
-            <ul className="sm:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+            <ul className="sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {listings.map((listing) => (
                 <ListingItem
                   key={listing.id}

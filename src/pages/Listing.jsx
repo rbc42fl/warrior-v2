@@ -51,21 +51,22 @@ export default function Listing() {
       <Swiper
         modules={[Navigation, Pagination, EffectFade]}
         slidesPerView={1}
-        centeredSlides={true}
+        // centeredSlides={true}
         navigation
         pagination={{ type: 'progressbar' }}
         effect="fade"
         autoplay={{ delay: 3000 }}
-        className="my_swiper"
+        // className="my_swiper"
       >
         {listing.imgUrls.map((url, index) => (
           <SwiperSlide key={index}>
             <div
+              // className="relative w-full overflow-hidden h-[400px] "
               style={{
                 background: `url(${listing.imgUrls[index]})  center no-repeat`,
                 backgroundSize: 'cover',
               }}
-              className="relative w-full overflow-hidden h-[400px] "
+              className="swiperSlideDiv"
             ></div>
           </SwiperSlide>
         ))}
