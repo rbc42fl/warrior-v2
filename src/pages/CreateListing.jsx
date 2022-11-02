@@ -27,6 +27,7 @@ export default function CreateListing() {
     verse: '',
     verse1: '',
     verse2: '',
+
     command: '',
     keyword_1: '',
     keyword_2: '',
@@ -46,10 +47,11 @@ export default function CreateListing() {
     verse,
     verse1,
     verse2,
+    verse3,
     command,
     keyword_1,
     keyword_2,
-    keyword_3,
+
     promise,
     sin,
     reflections,

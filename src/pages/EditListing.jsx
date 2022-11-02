@@ -35,7 +35,7 @@ export default function CreateListing() {
     verse: '',
     verse1: '',
     verse2: '',
-    verse3: '',
+
     message: '',
     reflections: '',
     command: '',
@@ -54,7 +54,7 @@ export default function CreateListing() {
     verse,
     verse1,
     verse2,
-    verse3,
+
     message,
     reflections,
     command,
@@ -279,20 +279,6 @@ export default function CreateListing() {
                 type="number"
                 id="verse2"
                 value={verse2}
-                onChange={onChange}
-                min="1"
-                max="250"
-                // placeholder="Verse"
-                // required
-                className="w-1/2 px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
-              />
-            </div>
-            <div className="flex flex-col w-48">
-              <p className="text-lg font-semibold">Verse</p>
-              <input
-                type="number"
-                id="verse3"
-                value={verse3}
                 onChange={onChange}
                 min="1"
                 max="250"
