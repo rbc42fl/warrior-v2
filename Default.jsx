@@ -7,7 +7,7 @@ function Default() {
   while (s != 'steadfast') {
     s = prompt('please enter your password');
     if (s == 'steadfast') {
-      window.location.href = 'about.html'; //page to redirect if password entered is correct
+      window.location.href = 'sing-in'; //page to redirect if password entered is correct
     } else {
       alert('Incorrect password-Try again');
     }

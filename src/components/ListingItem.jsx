@@ -38,14 +38,12 @@ export default function ListingItem({ listing, id, onEdit, onDelete }) {
             verse:&nbsp;{listing.verse1}
           </p>
           <p className="font-semibold m-0 text-xl">
+            {' '}
             verse:&nbsp;{listing.verse2}
           </p>
           <p className="font-semibold m-0 text-xl truncate mb-4">
             message:&nbsp;{listing.message}
           </p>
-          {/* <p className="text-[#457b9d] mt-2 font-semibold">
-            {listing.type === 'new' && ' / month'}
-          </p> */}
         </div>
       </Link>
       {onDelete && (

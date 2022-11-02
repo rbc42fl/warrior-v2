@@ -323,7 +323,7 @@ export default function CreateListing() {
                 placeholder="Key"
                 min="1"
                 max="50"
-                // required
+                required
                 className="w-full h-28 px1 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
               />
             </div>
@@ -335,7 +335,7 @@ export default function CreateListing() {
                 value={keyword_2}
                 onChange={onChange}
                 placeholder="Key"
-                // required
+                required
                 className="w-full px-1 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
               />
             </div>
@@ -347,7 +347,7 @@ export default function CreateListing() {
                 value={keyword_3}
                 onChange={onChange}
                 placeholder="Key"
-                // required
+                required
                 className="w-full px-1 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
               />
             </div>
@@ -387,9 +387,7 @@ export default function CreateListing() {
 
         <div className="mb-6">
           <p className="text-lg font-semibold">Images</p>
-          <p className="text-gray-600">
-            The first image will be the cover (max 6)
-          </p>
+          <p className="text-gray-600">Add your image!</p>
           <input
             type="file"
             id="images"
