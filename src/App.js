@@ -17,7 +17,7 @@ import EditListing from './pages/EditListing';
 import Listing from './pages/Listing';
 import Category from './pages/Category';
 import 'swiper/css/bundle';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 function App() {
   return (

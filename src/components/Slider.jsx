@@ -44,6 +44,12 @@ export default function Slider() {
   return (
     listings && (
       <>
+        {/* <img
+          className="  border rounded  mx-auto cover max-w-full h-auto hover:scale-105 transition-scale duration-200 ease-in"
+          loading="lazy"
+          src={listing.imgUrls[0]}
+          alt=""
+        /> */}
         <Swiper
           slidesPerView={1}
           navigation
@@ -62,14 +68,8 @@ export default function Slider() {
                   background: `url(${data.imgUrls[0]}) no-repeat`,
                   backgroundSize: 'cover',
                 }}
-                className="relative slide max-w-6xl h-[400px] overflow-hidden mt-4 "
+                className="relative  max-w-6xl h-[400px] mx-auto bg-center overflow-hidden mt-4 border-b-4 border-b-green-700"
               ></div>
-              {/* <p className="text-[#f1faee] absolute left-1 top-3 font-medium max-w-[90%] bg-[#457b9d] shadow-lg opacity-90 p-2 rounded-br-3xl">
-                {data.name}
-              </p> */}
-              {/* <p className="text-[#f1faee] absolute left-1 top-16 font-medium max-w-[90%] bg-[#457b9d] shadow-lg opacity-90 p-2 rounded-br-3xl">
-                {data.book}
-              </p> */}
             </SwiperSlide>
           ))}
         </Swiper>

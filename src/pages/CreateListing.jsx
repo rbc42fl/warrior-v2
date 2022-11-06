@@ -12,12 +12,11 @@ import { v4 as uuidv4 } from 'uuid';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useNavigate } from 'react-router-dom';
-// import { Dropdown } from 'react-bootstrap';
 
 export default function CreateListing() {
   const navigate = useNavigate();
   const auth = getAuth();
-  // const [geolocationEnabled, setGeolocationEnabled] = useState(true);
+
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     type: 'old',
@@ -84,9 +83,9 @@ export default function CreateListing() {
     e.preventDefault();
     setLoading(true);
 
-    if (images.length > 6) {
+    if (images.length > 1) {
       setLoading(false);
-      toast.error('maximum 6 images are allowed');
+      toast.error('maximum 1 images are allowed');
       return;
     }
 
@@ -140,14 +139,13 @@ export default function CreateListing() {
     const formDataCopy = {
       ...formData,
       imgUrls,
-      // geolocation,
+
       timestamp: serverTimestamp(),
       userRef: auth.currentUser.uid,
     };
     delete formDataCopy.images;
     !formDataCopy.offer && delete formDataCopy.discountedPrice;
-    // delete formDataCopy.latitude;
-    // delete formDataCopy.longitude;
+
     const docRef = await addDoc(collection(db, 'listings'), formDataCopy);
     setLoading(false);
     toast.success('Listing created');
@@ -240,7 +238,6 @@ export default function CreateListing() {
                   onChange={onChange}
                   min="1"
                   max="250"
-                  // placeholder="Verse"
                   required
                   className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
                 />
@@ -254,7 +251,6 @@ export default function CreateListing() {
                   onChange={onChange}
                   min="1"
                   max="250"
-                  // placeholder="Verse"
                   // required
                   className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
                 />
@@ -268,7 +264,6 @@ export default function CreateListing() {
                   onChange={onChange}
                   min="1"
                   max="250"
-                  // placeholder="Verse"
                   // required
                   className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
                 />
@@ -393,10 +388,10 @@ export default function CreateListing() {
             id="images"
             onChange={onChange}
             accept=".jpg,.png,.jpeg"
-            multiple
             required
             className="w-full px-3 py-1.5 text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:bg-white focus:border-slate-600"
           />
+          <p> value={book}</p>
         </div>
 
         <button

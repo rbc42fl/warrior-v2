@@ -1,6 +1,6 @@
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
-// import { MdLocationOn } from 'react-icons/md';
+
 import { FaTrash } from 'react-icons/fa';
 import { MdEdit } from 'react-icons/md';
 
@@ -11,7 +11,7 @@ export default function ListingItem({ listing, id, onEdit, onDelete }) {
     <li className="relative bg-white flex flex-col justify-between items-center shadow-md hover:shadow-xl rounded-md overflow-hidden transition-shadow duration-150 m-[10px]">
       <Link className="contents" to={`/category/${listing.type}/${id}`}>
         <img
-          className="h-[400px] w-full cover  hover:scale-105 transition-scale duration-200 ease-in"
+          className="h-auto w-full cover  hover:scale-105 transition-scale duration-200 ease-in border-b-4"
           loading="lazy"
           src={listing.imgUrls[0]}
           alt=""

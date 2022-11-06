@@ -4,22 +4,8 @@ import Spinner from '../components/Spinner';
 import { db } from '../firebase';
 import { useParams } from 'react-router-dom';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, {
-  EffectFade,
-  Autoplay,
-  Navigation,
-  Pagination,
-} from 'swiper';
-
 ////////////////
-import // FaShare,
-// FaCross,
-// FaBed,
-// FaBath,
-// FaParking,
-// FaChair,
-'react-icons/fa';
+import 'react-icons/fa';
 import { getAuth } from 'firebase/auth';
 import Contact from '../components/Contact';
 ///////////Function//////////////
@@ -30,7 +16,7 @@ export default function Listing() {
   const [loading, setLoading] = useState(true);
 
   const [contactLandlord, setContactLandlord] = useState(false);
-  SwiperCore.use([Autoplay, Navigation, Pagination]);
+  // SwiperCore.use([Autoplay, Navigation, Pagination]);
 
   useEffect(() => {
     async function fetchListing() {
@@ -47,34 +33,23 @@ export default function Listing() {
     return <Spinner />;
   }
   return (
-    <main className="max-w-24">
-      <Swiper
-        modules={[Navigation, Pagination, EffectFade]}
-        slidesPerView={1}
-        // centeredSlides={true}
-        navigation
-        pagination={{ type: 'progressbar' }}
-        effect="fade"
-        autoplay={{ delay: 3000 }}
-        // className="my_swiper"
-      >
-        {listing.imgUrls.map((url, index) => (
-          <SwiperSlide key={index}>
-            <div
-              // className="relative w-full overflow-hidden h-[400px] "
-              style={{
-                background: `url(${listing.imgUrls[index]})  center no-repeat`,
-                backgroundSize: 'cover',
-              }}
-              className="swiperSlideDiv"
-            ></div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <main className=" max-w-6xl mx-auto">
+      {/* <div className="image_container max-w-full lg:mb-5"> */}
+      <div className="flex justify-center items-center">
+        <img
+          className="border rounded-lg hover:scale-105 transition-scale duration-200 ease-in border-b-2 border-b-blue-700 "
+          loading="lazy"
+          src={listing.imgUrls[0]}
+          alt=""
+          style={{
+            minWidth: 600,
+            maxHeight: 400,
+            margin: '20px',
+          }}
+        />
+      </div>
 
-      {/* ////End of swiper ///// */}
-
-      <div className="mx-auto flex flex-col  max-w-6xl lg:mx-auto p-4 rounded-lg shadow-lg bg-white lg:space-x-6 ">
+      <div className="mx-auto flex flex-col  max-w-6xl  p-4 rounded-lg shadow-lg bg-white lg:space-x-6 mx-auto">
         <div className=" w-full h-full  ">
           <h3 className="font-semibold mb-4">My Quiet Time Gleanings</h3>
           <hr />
