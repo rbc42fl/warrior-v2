@@ -43,7 +43,7 @@ export default function Listing() {
           alt=""
           style={{
             minWidth: 600,
-            maxHeight: 400,
+            maxHeight: 500,
             margin: '20px',
           }}
         />
