@@ -23,7 +23,10 @@ export default function Header() {
     }
   }
   return (
-    <div className="bg-white border-b sticky top-0  z-40 shadow-sm text-center">
+    <div
+      header
+      className="bg-white border-b sticky top-0  z-40 shadow-sm text-center"
+    >
       <div>
         <h2
           onClick={() => navigate('/')}

@@ -168,7 +168,7 @@ export default function Profile() {
             <h2 className="text-2xl text-blue-600 text-center font-semibold mb-6 uppercase">
               My Quiet Time Postings
             </h2>
-            <ul className="sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <ul className="sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
               {listings.map((listing) => (
                 <ListingItem
                   key={listing.id}

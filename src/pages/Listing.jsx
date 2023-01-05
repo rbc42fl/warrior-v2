@@ -35,7 +35,7 @@ export default function Listing() {
   return (
     <main className=" max-w-6xl mx-auto">
       {/* <div className="image_container max-w-full lg:mb-5"> */}
-      <div className="flex justify-center items-center">
+      <div className="flex ">
         <img
           className="border rounded-lg hover:scale-105 transition-scale duration-200 ease-in border-b-2 border-b-blue-700 "
           loading="lazy"
@@ -49,8 +49,8 @@ export default function Listing() {
         />
       </div>
 
-      <div className="mx-auto flex flex-col  max-w-6xl  p-4 rounded-lg shadow-lg bg-white lg:space-x-6 mx-auto">
-        <div className=" w-full h-full  ">
+      <div className="mr-10rem flex flex-col  max-w-2xl  p-4 rounded-lg shadow-lg bg-white  ">
+        <div className="w-full h-full ">
           <h3 className="font-semibold mb-4">My Quiet Time Gleanings</h3>
           <hr />
           <p className="mt-3 mb-3">

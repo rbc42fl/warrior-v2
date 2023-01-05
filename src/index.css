@@ -4,6 +4,8 @@
 
 body {
   background-color: rgb(240, 253, 244);
+  max-width: 60vw;
+  margin: 0 auto;
 }
 
 .swiper-button-next:after,
@@ -12,6 +14,9 @@ body {
 }
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: #d33c0e !important;
+}
+.header {
+  background-color: #d33c0e;
 }
 main {
   position: absolute;
