@@ -68,7 +68,7 @@ export default function Slider() {
                   background: `url(${data.imgUrls[0]}) no-repeat`,
                   backgroundSize: 'cover',
                 }}
-                className="relative  max-w-6xl h-[400px] mx-auto bg-center overflow-hidden mt-4 border-b-4 border-b-green-700"
+                className="relative  max-w-6xl h-[400px] mx-auto bg-cover overflow-hidden mt-4 border-b-4 border-b-green-700"
               ></div>
             </SwiperSlide>
           ))}
