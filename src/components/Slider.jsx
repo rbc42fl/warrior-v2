@@ -9,7 +9,7 @@ import SwiperCore, {
   EffectFade,
   Autoplay,
   Navigation,
-  Pagination,
+  Pagination
 } from 'swiper';
 import 'swiper/css/bundle';
 import { useNavigate } from 'react-router-dom';
@@ -24,10 +24,10 @@ export default function Slider() {
       const q = query(listingsRef, orderBy('timestamp', 'desc'), limit(5));
       const querySnap = await getDocs(q);
       let listings = [];
-      querySnap.forEach((doc) => {
+      querySnap.forEach(doc => {
         return listings.push({
           id: doc.id,
-          data: doc.data(),
+          data: doc.data()
         });
       });
       setListings(listings);
@@ -66,9 +66,9 @@ export default function Slider() {
               <div
                 style={{
                   background: `url(${data.imgUrls[0]}) no-repeat`,
-                  backgroundSize: 'cover',
+                  backgroundSize: 'cover'
                 }}
-                className="relative  max-w-6xl h-[400px] mx-auto bg-cover overflow-hidden mt-4 border-b-4 border-b-green-700"
+                className="relative  max-w-6xl h-[500px] mx-auto bg-cover overflow-hidden mt-4 border-b-4 border-b-green-700"
               ></div>
             </SwiperSlide>
           ))}

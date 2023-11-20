@@ -15,13 +15,12 @@ body {
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: #d33c0e !important;
 }
-.header {
-}
-main {
+
+/* main {
   position: absolute;
   width: 100%;
   height: 100%;
-}
+} */
 /* .image_container {
   max-width: 72rem;
   margin: 0 auto;
@@ -44,4 +43,6 @@ main {
 
 html {
   scrollbar-width: none;
+  max-width: 1000px;
+  margin: 0 auto;
 }

@@ -34,13 +34,13 @@ export default function ListingItem({ listing, id, onEdit, onDelete }) {
           <p className="font-semibold m-0 text-xl">
             verse:&nbsp;{listing.verse}
           </p>
-          <p className="font-semibold m-0 text-xl">
+          {/* <p className="font-semibold m-0 text-xl">
             verse:&nbsp;{listing.verse1}
           </p>
           <p className="font-semibold m-0 text-xl">
             {' '}
             verse:&nbsp;{listing.verse2}
-          </p>
+          </p> */}
           <p className="font-semibold m-0 text-xl truncate mb-4">
             message:&nbsp;{listing.message}
           </p>

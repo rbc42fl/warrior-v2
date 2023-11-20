@@ -5,7 +5,7 @@ import {
   getStorage,
   ref,
   uploadBytesResumable,
-  getDownloadURL,
+  getDownloadURL
 } from 'firebase/storage';
 import { getAuth } from 'firebase/auth';
 import { v4 as uuidv4 } from 'uuid';
@@ -15,11 +15,12 @@ import {
   doc,
   getDoc,
   serverTimestamp,
-  updateDoc,
+  updateDoc
 } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import styles from './EditListing.module.css';
 
 export default function CreateListing() {
   const navigate = useNavigate();
@@ -33,18 +34,18 @@ export default function CreateListing() {
     book: '',
     chapter: '',
     verse: '',
-    verse1: '',
-    verse2: '',
+    //verse1: '',
+    //verse2: '',
 
-    message: '',
+    // message: '',
     reflections: '',
-    command: '',
-    promise: '',
-    sin: '',
+    // command: '',
+    // promise: '',
+    // sin: '',
     keyword_1: '',
     keyword_2: '',
     keyword_3: '',
-    images: {},
+    images: {}
   });
   const {
     // type,
@@ -52,18 +53,18 @@ export default function CreateListing() {
     book,
     chapter,
     verse,
-    verse1,
-    verse2,
+    // verse1,
+    // verse2,
 
     message,
     reflections,
-    command,
-    promise,
-    sin,
+    // command,
+    // promise,
+    // sin,
     keyword_1,
     keyword_2,
     keyword_3,
-    images,
+    images
   } = formData;
 
   const params = useParams();
@@ -106,16 +107,16 @@ export default function CreateListing() {
     }
     // Files
     if (e.target.files) {
-      setFormData((prevState) => ({
+      setFormData(prevState => ({
         ...prevState,
-        images: e.target.files,
+        images: e.target.files
       }));
     }
     // Text/Boolean/Number
     if (!e.target.files) {
-      setFormData((prevState) => ({
+      setFormData(prevState => ({
         ...prevState,
-        [e.target.id]: boolean ?? e.target.value,
+        [e.target.id]: boolean ?? e.target.value
       }));
     }
   }
@@ -137,7 +138,7 @@ export default function CreateListing() {
         const uploadTask = uploadBytesResumable(storageRef, image);
         uploadTask.on(
           'state_changed',
-          (snapshot) => {
+          snapshot => {
             // Observe state change events such as progress, pause, and resume
             // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
             const progress =
@@ -153,14 +154,14 @@ export default function CreateListing() {
               default:
             }
           },
-          (error) => {
+          error => {
             // Handle unsuccessful uploads
             reject(error);
           },
           () => {
             // Handle successful uploads on complete
             // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            getDownloadURL(uploadTask.snapshot.ref).then(downloadURL => {
               resolve(downloadURL);
             });
           }
@@ -169,8 +170,8 @@ export default function CreateListing() {
     }
 
     const imgUrls = await Promise.all(
-      [...images].map((image) => storeImage(image))
-    ).catch((error) => {
+      [...images].map(image => storeImage(image))
+    ).catch(error => {
       setLoading(false);
       toast.error('Images not uploaded');
       return;
@@ -181,7 +182,7 @@ export default function CreateListing() {
       imgUrls,
       // geolocation,
       timestamp: serverTimestamp(),
-      userRef: auth.currentUser.uid,
+      userRef: auth.currentUser.uid
     };
     /////// up date form data//////////
     delete formDataCopy.images;
@@ -199,11 +200,11 @@ export default function CreateListing() {
     return <Spinner />;
   }
   return (
-    <main className="max-w-lg px-2 mx-auto">
+    <main className={styles.container}>
       <h1 className="text-3xl text-center mt-6 font-bold">Edit Your Posting</h1>
       <form onSubmit={onSubmit}>
         <div className="flex flex-col justify-center">
-          <p className="text-lg mt-6 font-semibold">Name</p>
+          <p className={styles.heading}>Name</p>
           <input
             type="text"
             id="name"
@@ -212,12 +213,14 @@ export default function CreateListing() {
             placeholder="Name"
             maxLength="32"
             minLength="10"
-            required
-            className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
+            className={styles.list_item}
           />
-          <div className="flex flex-col space-x-6 mb-6">
+          <div className={styles.list_container}>
             <div>
-              <p className="text-lg font-semibold "> Bible Book</p>
+              <p className="text-lg font-semibold py-1">
+                {' '}
+                What Book are you studying?
+              </p>
               <input
                 type="text"
                 id="book"
@@ -226,189 +229,123 @@ export default function CreateListing() {
                 min="1"
                 max="50"
                 placeholder="Book"
-                required
-                className="w-full px-4 py-2 text-xl text-gray-900 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 "
+                className={styles.list_item}
               />
             </div>
             <div>
-              <p className="text-lg font-semibold">Chapter</p>
+              <p className="text-lg font-semibold py-1">
+                What Chapter are you Studying?
+              </p>
               <input
-                type="number"
+                type="text"
                 id="chapter"
                 value={chapter}
                 onChange={onChange}
                 min="1"
                 max="250"
                 required
-                className="w-20 px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 text-center"
+                className={styles.list_item}
               />
             </div>
             <div className="flex flex-col">
               <div className="flex flex-col w-60">
-                <p className="text-lg font-semibold ">Verse</p>
+                <p className={styles.heading}>What is the Verse range?</p>
                 <input
-                  type="number"
+                  type="text"
                   id="verse"
                   value={verse}
                   onChange={onChange}
                   min="1"
                   max="250"
-                  required
-                  className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
-                />
-              </div>
-              <div className="flex flex-col w-60">
-                <p className="text-lg font-semibold ">Verse</p>
-                <input
-                  type="number"
-                  id="verse1"
-                  value={verse1}
-                  onChange={onChange}
-                  min="1"
-                  max="250"
-                  required
-                  className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
-                />
-              </div>
-              <div className="flex flex-col w-60">
-                <p className="text-lg font-semibold ">Verse</p>
-                <input
-                  type="number"
-                  id="verse2"
-                  value={verse2}
-                  onChange={onChange}
-                  min="1"
-                  max="250"
-                  required
-                  className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
+                  className={styles.list_item}
                 />
               </div>
             </div>
           </div>
 
-          <p className="text-lg mt-6 font-semibold">Is there a command ?</p>
-          <textarea
-            type="text"
-            id="command"
-            value={command}
-            onChange={onChange}
-            placeholder="Command"
-            required
-            className="flex flex-wrap w-full px-4 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
-          />
-          <p className="text-lg mt-6 font-semibold">Is there a promise ?</p>
-          <textarea
-            type="text"
-            id="promise"
-            value={promise}
-            onChange={onChange}
-            placeholder="Promise"
-            required
-            className="flex flex-wrap w-full px-4 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
-          />
-          <p className="text-lg mt-3 font-semibold">Is there a sin to avoid?</p>
+          <div className="key">
+            <p className={styles.heading}>Some Key Words From My Study</p>
+          </div>
+          <div className="styles.list_container">
+            <ul className={styles.List_container}>
+              <li className={styles.list_item}>
+                <h3>Key Word</h3>
+                <textarea
+                  type="text"
+                  id="keyword_1"
+                  value={keyword_1}
+                  onChange={onChange}
+                  placeholder="Key"
+                  className={styles.list_item}
+                />
+              </li>
 
-          <textarea
-            type="text"
-            id="sin"
-            value={sin}
-            onChange={onChange}
-            placeholder="Sin to avoid"
-            required
-            className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-3"
-          />
-          <div className="flex max-h-28">
-            <div className="flex flex-col mr-3 ">
-              <p className="text-lg font-semibold">Key Word</p>
-              <textarea
-                type="text"
-                id="keyword_1"
-                value={keyword_1}
-                onChange={onChange}
-                placeholder="Key"
-                min="1"
-                max="50"
-                required
-                className="w-full h-28 px1 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
-              />
+              <div className="flex flex-col">
+                <li className={styles.list_item}>
+                  <h3>Key Word</h3>
+                  <textarea
+                    type="text"
+                    id="keyword_2"
+                    value={keyword_2}
+                    onChange={onChange}
+                    placeholder="Key"
+                    className={styles.list_item}
+                  />
+                </li>
+              </div>
+
+              <div className="flex flex-col">
+                <li className={styles.list_item}>
+                  <h3>Key Word</h3>
+                  <textarea
+                    type="text"
+                    id="keyword_3"
+                    value={keyword_3}
+                    onChange={onChange}
+                    placeholder="Key"
+                    required
+                    className={styles.list_item}
+                  />
+                </li>
+              </div>
+            </ul>
+          </div>
+          <div>
+            <div>
+              <div className="flex flex-col">
+                <span className={styles.heading}>
+                  Primary Message From Scripture
+                </span>
+                <textarea
+                  type="text"
+                  id="message"
+                  value={message}
+                  onChange={onChange}
+                  placeholder=" Scriptural Message"
+                  className={styles.text_area}
+                />
+              </div>
             </div>
-            <div className="flex flex-col mr-3">
-              <p className="text-lg font-semibold">Key Word</p>
-              <textarea
-                type="text"
-                id="keyword_2"
-                value={keyword_2}
-                onChange={onChange}
-                placeholder="Key"
-                required
-                className="w-full px-1 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
-              />
-            </div>
+            {/* ///// End key word///// */}
+
             <div className="flex flex-col">
-              <p className="text-lg font-semibold">Key Word</p>
-              <textarea
-                type="text"
-                id="keyword_3"
-                value={keyword_3}
-                onChange={onChange}
-                placeholder="Key"
-                required
-                className="w-full px-1 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <div>
-              <p className="text-lg mt-6 font-semibold">
-                Primary Message From Scripture
-              </p>
-              <textarea
-                type="text"
-                id="message"
-                value={message}
-                onChange={onChange}
-                placeholder=" Scriptural Message"
-                required
-                className="w-full h-36 px-1s py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-3"
-              />
-            </div>
-
-            <div>
-              <p className="text-lg mt-6 font-semibold">
-                Your Personal Reflections
-              </p>
+              <span className={styles.heading}>
+                The Primary Message From Scripture{' '}
+              </span>
               <textarea
                 type="text"
                 id="reflections"
                 value={reflections}
                 onChange={onChange}
                 placeholder="Reflections"
-                required
-                className="w-full h-36 px-1 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
+                className={styles.text_area}
               />
             </div>
           </div>
-          {/* ///// End key word///// */}
-
-          <div className="flex flex-col">
-            <div>
-              <p className="text-lg mt-6 font-semibold">
-                Your Personal Reflections
-              </p>
-              <textarea
-                type="text"
-                id="reflections"
-                value={reflections}
-                onChange={onChange}
-                placeholder="Reflections"
-                required
-                className="w-full h-36 px-1 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
-              />
-            </div>
-          </div>
-
           <div className="mb-6">
-            <p className="text-lg font-semibold">Images</p>
+            <p className="text-lg font-semibold">
+              Images (Image must be chosen on edit)
+            </p>
             {/* <p className="text-gray-600">
               The first image will be the cover (max 6)
             </p> */}

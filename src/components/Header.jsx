@@ -8,7 +8,7 @@ export default function Header() {
   const navigate = useNavigate();
   const auth = getAuth();
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, user => {
       if (user) {
         setPageState('profile');
       } else {
@@ -25,12 +25,12 @@ export default function Header() {
   return (
     <div className="header bg-white border-b sticky top-0  z-40 shadow-sm text-center">
       <div>
-        <h2
+        <h1
           onClick={() => navigate('/')}
-          className=" text-md text-red-400 cursor-pointer "
+          className=" text-3xl text-gray-900 cursor-pointer "
         >
-          BEING STEADFAST
-        </h2>
+          BEING STEADFAST IN THE WORD
+        </h1>
         <h3 className="text-sm ">Best viewed on medium size screen</h3>
       </div>
 
@@ -38,7 +38,7 @@ export default function Header() {
         <div>
           <ul className="flex space-x-10">
             <li
-              className={` cursor-pointer py-3 text-sm font-semi-bold text-gray-400 border-b-[3px] border-b-transparent ${
+              className={` cursor-pointer py-3 text-sm font-bold text-gray-600 border-b-[3px] border-b-transparent ${
                 pathMatchRoute('/instructions') && 'text-black border-b-red-500'
               }`}
               onClick={() => navigate('/instructions')}

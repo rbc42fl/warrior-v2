@@ -5,37 +5,32 @@ export default function Instructions() {
     <>
       <div>
         <h1 className="text-center">Instructions</h1>
-        <p className="px-3 pb-2">
-          The following instructions on how to have a quiet time come from the
-          Every man A Warrior website. I have left out some of the information,
-          <br />
-          but you can goto their web site and look in the resources for the
-          complete quiet time form.
+        <p className="font-bold px-3 pb-2">
+          The following instructions are on how to use this web site!
         </p>
         <ul className="px-3">
           <li className="pb-2">
-            1. First read the passage, while asking the Holy Spirit to reveal it
-            to you.
+            1. First chose whether it is from the old or new testament.
+          </li>
+          <li className="pb-2">2. Enter your name.</li>
+          <li className="pb-2">3. Enter the chapter you are in.</li>
+          <li className="pb-2">
+            {' '}
+            4. Enter the verse or verse range you are discussing.{' '}
           </li>
           <li className="pb-2">
-            2. Find the verse that really speaks to you. You can enter three
-            verses.
+            5. Chose at least three key words in the passage.{' '}
           </li>
-          <li className="pb-2">3. Determine if there is a command to obey?</li>
-          <li className="pb-2"> 4. Is there a promise to claim?</li>
-          <li className="pb-2">5. Is there a sin to avoid?</li>
 
           <li className="pb-2">
-            6. Determine a least three key words that stick with you from the
-            reading.
+            6. Type or copy the verse or verses into the Scripture text area.
           </li>
+
           <li className="pb-2">
-            7. Look for the main scriptural message in the verse, and record it.
-          </li>
-          <li className="pb-2">
-            8. Record your own personal reflections and application from the
+            7. Record your own personal reflections and application from the
             verse.
           </li>
+
           <li className="pb-2">
             9. Find and up load a photo that describes the message or you can
             have one photo that you use all the time and let it be your tag
