@@ -5,14 +5,15 @@ import {
   limit,
   orderBy,
   query,
-  where,
+  where
 } from 'firebase/firestore';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ListingItem from '../components/ListingItem';
-import Slider from '../components/Slider';
+// import Slider from '../components/Slider';
 import { db } from '../firebase';
+import helmet from '../images/helmet.jpg';
 
 export default function Home() {
   const [newListings, setNewListings] = useState(null);
@@ -31,10 +32,10 @@ export default function Home() {
         // execute the query
         const querySnap = await getDocs(q);
         const listings = [];
-        querySnap.forEach((doc) => {
+        querySnap.forEach(doc => {
           return listings.push({
             id: doc.id,
-            data: doc.data(),
+            data: doc.data()
           });
         });
         setNewListings(listings);
@@ -62,10 +63,10 @@ export default function Home() {
         // execute the query
         const querySnap = await getDocs(q);
         const listings = [];
-        querySnap.forEach((doc) => {
+        querySnap.forEach(doc => {
           return listings.push({
             id: doc.id,
-            data: doc.data(),
+            data: doc.data()
           });
         });
         setOldListings(listings);
@@ -77,7 +78,9 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <Slider />
+      <div className="md:w-[67%] lg:w-[50%] mb-12 md:mb-6 mx-auto">
+        <img src={helmet} alt="helmet" className="w-full rounded-2xl " />
+      </div>
 
       <div className="max-w-6xl mx-auto pt-4  h-[400px]">
         {newListings && newListings.length > 0 && (
@@ -91,7 +94,7 @@ export default function Home() {
               </p>
             </Link>
             <ul className="sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-              {newListings.map((listing) => (
+              {newListings.map(listing => (
                 <ListingItem
                   key={listing.id}
                   listing={listing.data}
@@ -112,7 +115,7 @@ export default function Home() {
               </p>
             </Link>
             <ul className="sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
-              {oldListings.map((listing) => (
+              {oldListings.map(listing => (
                 <ListingItem
                   key={listing.id}
                   listing={listing.data}

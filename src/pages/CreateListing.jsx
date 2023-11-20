@@ -245,75 +245,15 @@ export default function CreateListing() {
                   onChange={onChange}
                   min="1"
                   max="250"
-                  // required
+                  required
                   className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
                 />
               </div>
-              {/* <div className="flex flex-col w-60">
-                <p className="text-lg font-semibold">Verse</p>
-                <input
-                  type="number"
-                  id="verse1"
-                  value={verse1}
-                  onChange={onChange}
-                  min="1"
-                  max="250"
-                  // required
-                  className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
-                />
-              </div> */}
-              {/* <div className="flex flex-col w-60">
-                <p className="text-lg font-semibold">Verse</p>
-                <input
-                  type="number"
-                  id="verse2"
-                  value={verse2}
-                  onChange={onChange}
-                  min="1"
-                  max="250"
-                  // required
-                  className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg  focus:text-gray-700 focus:bg-white focus:border-slate-600 "
-                />
-              </div> */}
             </div>
           </div>
         </div>
 
         <div className="flex flex-col">
-          {/* <p className="text-lg mt-3 font-semibold">Is there a Command?</p>
-
-          <textarea
-            type="text"
-            id="command"
-            value={command}
-            onChange={onChange}
-            placeholder="Command"
-            required
-            className="w-full px-1 py-2 text-lg text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-2"
-          /> */}
-
-          {/* <p className="text-lg mt-3 font-semibold">Is there a Promise?</p>
-
-          <textarea
-            type="text"
-            id="promise"
-            value={promise}
-            onChange={onChange}
-            placeholder=" Is There a Promise"
-            required
-            className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-3"
-          /> */}
-          {/* <p className="text-lg mt-3 font-semibold">Is there a sin to avoid?</p>
-
-          <textarea
-            type="text"
-            id="sin"
-            value={sin}
-            onChange={onChange}
-            placeholder="Sin to avoid"
-            required
-            className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded-lg transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-3"
-          /> */}
           <div className="flex max-h-28">
             <div className="flex flex-col mr-3 ">
               <p className="text-lg font-semibold">Key Word</p>
