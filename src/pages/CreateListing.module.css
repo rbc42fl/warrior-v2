@@ -12,7 +12,7 @@
 /* flex flex-col justify-center max-w-6xl mx-auto */
 .img_holder {
   display: flex;
-  max-width: 128rem;
+  max-width: 72rem;
   margin: auto;
 }
 /* flex max-w-6xl mx-auto */
